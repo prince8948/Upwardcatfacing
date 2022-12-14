@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>CLASS LIST</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style type="text/css">
+         @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+         body{
+            background: #f2f2f2;
+         }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #fff; 
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+  position: fixed;
+}
+
+.menulogo{
+   width: 200px;
+   height: 60px;
+   line-height: 80px;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover{
+  color: #111;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.content div{
+  font-size: 40px;
+  font-weight: 700;
+}
+.container{
+   display: inline-block;
+   margin: 50px 150px 0px 150px;
+   width: 1200px;
+}
+.filter{
+   float: left;
+   background: #fff;
+   border-radius: 5px;
+   box-sizing: border-box;
+   padding: 10px;
+}
+.article{
+   width: 75%;
+   float: right;
+}
+.footer{
+   margin-top: 50px;
+   background-color: #d5e8fb;
+   width: 100%;
+   height: 300px;
+
+
+
+  }
+
+
+
+
+
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 1px solid #000;
+  border-right: none;
+  padding: 5px;
+  height: 30px;
+  
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  height: 30px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+
+  }
+  a{
+   text-decoration: none;
+   color: black;
+  }
+
+  .loginlogo{
+   width: 50px;
+   height: 50px;
+   margin-left: 10px;
+   border-radius: 50px;
+   
+  }
+  .loginlogo1{
+   width: 50px;
+   height: 50px;
+   margin-left: 15px;
+   border-radius: 50px;
+  }
+  .cart{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 80px;
+}
+
+
+      </style>
+
+
+
+
+   </head>
+   <body>
+      <nav>
+         <div class="logo">
+            <a href=""> <img src="logo.png" class="menulogo"></a>
+         </div>
+         <input type="checkbox" id="click">
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>
+            <li><a class="active" href="signup.html">HOME</a></li>
+            <li><a href="#">CLASS LIST</a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">SIGN UP AS TEACHER</a></li>
+            <li><a href="#">CONTACT US</a></li>
+            <li><a href=""><img src="cart.png" class="cart"></a></li>
+         </ul>
+      </nav>
+
+      <div class="container" style="margin-top:100px;">
+         <h3>Class List</h3>
+         <p>Filtered By</p>
+         <div class="filter">
+            
+            
+            <form style="padding: 20px; ">
+               <p>Choose Date</p>
+                  <input type="date" name="datetime" value="Inday" size="60px" style="width: 200px; border-right-style: hidden;
+        border-left-style: hidden; padding: 10px"><br><br>
+
+               <p>Choose Time</p>
+               <label for="date"></label>
+               <progress id="date" value="9:00pm" max="12:00pm" style="width: 200px;">9:00pm</progress><br><br>
+               <p>Choose Dance Style</p>
+
+                <select style="width: 200px; border-right-style: hidden;
+        border-left-style: hidden; padding: 10px">
+                  <option>All</option>
+                  <option>Hip Hop</option>
+                  <option>BHarat Natyam</option>
+                  <option>Bhangada</option>
+                  <option>Garbha</option>
+                  <option>Kuchhipudi</option>
+                  <option>Belley dance</option>
+                  <option>Ball Dance</option>
+                  <option>Salsa</option>
+                  <option>Katthak</option>
+                  <option>Free Style</option>
+                  <option>Lyrical Hip Hop</option>
+               </select><br><br>
+
+               <p>Choose Teacher/Instructor</p>
+                <select style="width: 200px; border-right-style: hidden;
+        border-left-style: hidden; padding: 10px">
+                  <option>All</option>
+                  <option>Remo Desuza</option>
+                  <option>Terence Luise</option>
+                  <option>Nora Fatehi</option>
+                  <option>Geeta</option>
+                  <option>Madhuri Dixit</option>
+                  <option>Ditto</option>
+                  <option>Raghav</option>
+                  <option>Dharmesh</option>   
+               </select ><br><br>
+
+               <p>Choose Level</p>
+                <select style="width: 200px; border-right-style: hidden;
+        border-left-style: hidden; padding: 10px">
+                  <option>All</option>
+                  <option>Low</option>
+                  <option>Average</option>
+                  <option>Hard</option>
+                  <option>Advance</option>   
+                  <option>Advance</option>   
+               </select>
+                
+            </form>
+         </div>
+         <div class = "article">
+            <div class="wrap">
+               <p>search data for : November 25 2022</p>
+               <div class="search">
+                    <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                    <button type="submit" class="searchButton">
+                         <i class="fa fa-search"></i>
+                    </button>
+               </div>
+            </div>
+
+
+            <article style="display: inline-block;">
+               <div class="img" style="margin-top: 20px; background: #fff; padding: 10px; border-radius: 10px; display: inline-flex;">
+                     <img src="picyoga.jpg" width="220" height="130px" style="border-radius: 5px;">
+                     <div style="margin-left: 25px; width: 350px;">
+                        <p style="font-size: 18px; font-weight:500;">Online: Pilates Evolution By Lucy Hale</p>
+                        <p style="font-size: 15px;">November 23, 2020 | 01:00pm - 02:00pm(EDT)</p><br>
+                        <p style="font-size: 15px;">Assigned teacher: Lucy Hale</p>
+                        <p style="font-size: 15px;">Slot left: 0/20</p>
+                     </div>
+                     <div style="float: right; margin-left: 30px; width: 250px; text-align: center;">
+                        <p style="font-size: 20px; font-weight:bold; margin-top: 20px;">US$ 15  |  60min</p><br>
+                        <button style="padding: 8px 12px 8px 12px; background: #f87bb3; border-radius:15px; width: 200px; border:none;">ADD CLASS TO CART</button>
+                     </div>
+               </div>
+
+
+               <div class="img" style="margin-top: 20px; background: #fff; padding: 10px; border-radius: 10px; display: inline-flex;">
+                     <img src="picyoga.jpg" width="220" height="130px" style="border-radius: 5px;">
+                     <div style="margin-left: 25px; width: 350px;">
+                        <p style="font-size: 18px; font-weight:500;">Online: Pilates Evolution By Lucy Hale</p>
+                        <p style="font-size: 15px;">November 23, 2020 | 01:00pm - 02:00pm(EDT)</p><br>
+                        <p style="font-size: 15px;">Assigned teacher: Lucy Hale</p>
+                        <p style="font-size: 15px;">Slot left: 0/20</p>
+                     </div>
+                     <div style="float: right; margin-left: 30px; width: 250px; text-align: center;">
+                        <p style="font-size: 20px; font-weight:bold; margin-top: 20px;">US$ 15  |  60min</p><br>
+                        <button style="padding: 8px 12px 8px 12px; background: #f87bb3; border-radius:15px; width: 200px; border:none;">ADD CLASS TO CART</button>
+                     </div>
+               </div>
+
+               <div class="img" style="margin-top: 20px; background: #fff; padding: 10px; border-radius: 10px; display: inline-flex;">
+                     <img src="picyoga.jpg" width="220" height="130px" style="border-radius: 5px;">
+                     <div style="margin-left: 25px; width: 350px;">
+                        <p style="font-size: 18px; font-weight:500;">Online: Pilates Evolution By Lucy Hale</p>
+                        <p style="font-size: 15px;">November 23, 2020 | 01:00pm - 02:00pm(EDT)</p><br>
+                        <p style="font-size: 15px;">Assigned teacher: Lucy Hale</p>
+                        <p style="font-size: 15px;">Slot left: 0/20</p>
+                     </div>
+                     <div style="float: right; margin-left: 30px; width: 250px; text-align: center;">
+                        <p style="font-size: 20px; font-weight:bold; margin-top: 20px;">US$ 15  |  60min</p><br>
+                        <button style="padding: 8px 12px 8px 12px; background: #f87bb3; border-radius:15px; width: 200px; border:none;">ADD CLASS TO CART</button>
+                     </div>
+               </div>
+
+               <div class="img" style="margin-top: 20px; background: #fff; padding: 10px; border-radius: 10px; display: inline-flex;">
+                     <img src="picyoga.jpg" width="220" height="130px" style="border-radius: 5px;">
+                     <div style="margin-left: 25px; width: 350px;">
+                        <p style="font-size: 18px; font-weight:500;">Online: Pilates Evolution By Lucy Hale</p>
+                        <p style="font-size: 15px;">November 23, 2020 | 01:00pm - 02:00pm(EDT)</p><br>
+                        <p style="font-size: 15px;">Assigned teacher: Lucy Hale</p>
+                        <p style="font-size: 15px;">Slot left: 0/20</p>
+                     </div>
+                     <div style="float: right; margin-left: 30px; width: 250px; text-align: center;">
+                        <p style="font-size: 20px; font-weight:bold; margin-top: 20px;">US$ 15  |  60min</p><br>
+                        <button style="padding: 8px 12px 8px 12px; background: #f87bb3; border-radius:15px; width: 200px; border:none;">ADD CLASS TO CART</button>
+                     </div>
+               </div>
+
+
+
+<!-- We try to create scroll or load button -->
+               <!-- <button onclick="myFunction()">Load More Classes</button>
+
+               <script>
+                  function myFunction() {
+                  location.href = "#top";
+                  }
+               </script>   -->
+
+               <div class="img" style="margin-top: 20px; background: #fff; padding: 10px; border-radius: 10px; display: inline-flex;">
+                     <img src="picyoga.jpg" width="220" height="130px" style="border-radius: 5px;">
+                     <div style="margin-left: 25px; width: 350px;">
+                        <p style="font-size: 18px; font-weight:500;">Online: Pilates Evolution By Lucy Hale</p>
+                        <p style="font-size: 15px;">November 23, 2020 | 01:00pm - 02:00pm(EDT)</p><br>
+                        <p style="font-size: 15px;">Assigned teacher: Lucy Hale</p>
+                        <p style="font-size: 15px;">Slot left: 0/20</p>
+                     </div>
+                     <div style="float: right; margin-left: 30px; width: 250px; text-align: center;">
+                        <p style="font-size: 20px; font-weight:bold; margin-top: 20px;">US$ 15  |  60min</p><br>
+                        <button style="padding: 8px 12px 8px 12px; background: #f87bb3; border-radius:15px; width: 200px; border:none;">ADD CLASS TO CART</button>
+                     </div>
+               </div>
+
+               <div class="img" style="margin-top: 20px; background: #fff; padding: 10px; border-radius: 10px; display: inline-flex;">
+                     <img src="picyoga.jpg" width="220" height="130px" style="border-radius: 5px;">
+                     <div style="margin-left: 25px; width: 350px;">
+                        <p style="font-size: 18px; font-weight:500;">Online: Pilates Evolution By Lucy Hale</p>
+                        <p style="font-size: 15px;">November 23, 2020 | 01:00pm - 02:00pm(EDT)</p><br>
+                        <p style="font-size: 15px;">Assigned teacher: Lucy Hale</p>
+                        <p style="font-size: 15px;">Slot left: 0/20</p>
+                     </div>
+                     <div style="float: right; margin-left: 30px; width: 250px; text-align: center;">
+                        <p style="font-size: 20px; font-weight:bold; margin-top: 20px;">US$ 15  |  60min</p><br>
+                        <button style="padding: 8px 12px 8px 12px; background: #f87bb3; border-radius:15px; width: 200px; border:none;">ADD CLASS TO CART</button>
+                        <!-- <button><a id="top"></a></button> -->
+                     </div>
+               </div>
+               
+            </article>
+
+         </div>
+      </div>
+
+
+      <div class="footer">
+      <footer style="display:inline-flex; margin-left:100px; background-color: #d5e8fb;">
+         <div style="width:300px; height:260px; text-align: center; margin-top: 30px; position: relative;">
+            <img src="logo.png" width="300px" height="100px" style="margin-top:50px;">
+         </div>
+         <div style="width:300px; height:260px; text-align: left; margin-top: 50px; padding-left: 20px; margin-left: 70px;">
+            <p>HEAD OFFICE</p><br>
+            <p>Proin sed condimentum st.</p>
+            <p>Vitae sodales #01-23455</p>
+            <p>Lorem ipsum, </p>
+            <p>Lipsum Dolores</p>
+         </div>
+
+         <div style="width:300px; height:260px; text-align: left; margin-top: 50px; padding-left: 20px; margin-left: 70px;">
+            <a href="#">ABOUT US</a><br><br>
+            <a href="#"> HOW IT WORK</a><br><br>
+            <a href="#">WHY UP WORDFACINGCAT</a><br><br>
+            <a href="#">PRICING</a>
+         </div>
+
+
+         <div style="width:300px; height:260px; text-align: left; margin-top: 50px; padding-left: 20px; margin-left: 70px;">
+            <a href="#">CONTACT WITH US</a><br><br>
+            <a href="#"><img src="facebooklogo.png" class="loginlogo"></a>
+            <a href="#"><img src="instalogo.jpg" class="loginlogo1"></a><br><br>
+
+            
+         </div>
+
+         
+      </footer> 
+      </div>
+
+
+
+   </body>
+</html>
